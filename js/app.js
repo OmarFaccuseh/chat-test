@@ -1,8 +1,8 @@
-const ruta = window.location.href;
-const ruta_final = "/chat-test/sw.js";
+var ruta = window.location.href;
+var ruta_final = '/chat-test/sw.js';
 if (navigator.serviceWorker){
-    if(ruta.includes("localhost")){
-        ruta_final = "/sw.js"
+    if(ruta.includes('localhost')){
+        ruta_final = '/sw.js';
     }
     navigator.serviceWorker.register(ruta_final);
 }
