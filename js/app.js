@@ -1,6 +1,10 @@
-
+const ruta = window.location.href;
+const ruta_final = "/twitor/sw.js";
 if (navigator.serviceWorker){
-    navigator.serviceWorker.register('/sw.js');
+    if(ruta.includes("localhost")){
+        ruta_final = "/sw.js"
+    }
+    navigator.serviceWorker.register(ruta_final);
 }
 
 // Referencias de jQuery
