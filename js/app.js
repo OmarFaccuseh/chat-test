@@ -1,5 +1,5 @@
 const ruta = window.location.href;
-const ruta_final = "/twitor/sw.js";
+const ruta_final = "/chat-test/sw.js";
 if (navigator.serviceWorker){
     if(ruta.includes("localhost")){
         ruta_final = "/sw.js"
