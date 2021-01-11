@@ -36,10 +36,13 @@ self.addEventListener('activate', e => {
     // elimina versiones anteriores de cache static
     const resp = caches.keys().then(keys => {
         keys.forEach(key => {
-            if(key =! STATIC_CACHE && key.includes('static')){
+            if (key !== STATIC_CACHE && key.includes('static')){
                 caches.delete(key);
             }
-        })
+            if (key !== DYNAMIC_CACHE && key.includes('dynamic') ) {
+                return caches.delete(key);
+            }
+        });
     });
 
     e.waitUntil(resp);
